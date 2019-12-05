@@ -17,7 +17,7 @@ public class Alarm {
         this.toggledAt = Instant.now();
     }
 
-    public void toggle(){
+    public void toggle() {
         this.triggered = !this.triggered;
         this.toggledAt = Instant.now();
     }
@@ -32,6 +32,12 @@ public class Alarm {
 
     public Instant getToggledAt() {
         return this.toggledAt;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("[%s] name: %s, triggered: %s, toggledAt: %s", getClass().getName(), this.name,
+                this.triggered, this.toggledAt);
     }
 
 }
